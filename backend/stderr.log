@@ -1,0 +1,720 @@
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3327804]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7faf7985df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7faf798faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7faf798fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7faf79804870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7faf797ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7faf7980142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7faf7762a610  [/lib64/libc.so.6]
+ 8: 0x7faf7762a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3328582]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f3c1f65df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f3c1f6faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f3c1f6fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f3c1f604870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f3c1f5ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f3c1f60142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f3c1d42a610  [/lib64/libc.so.6]
+ 8: 0x7f3c1d42a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3329231]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f8ee285df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f8ee28faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f8ee28fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f8ee2804870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f8ee27ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f8ee280142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f8ee062a610  [/lib64/libc.so.6]
+ 8: 0x7f8ee062a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3334018]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fae25c5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fae25cfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fae25cfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fae25c04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fae25bff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fae25c0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fae23a2a610  [/lib64/libc.so.6]
+ 8: 0x7fae23a2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3336829]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fee1d85df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fee1d8faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fee1d8fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fee1d804870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fee1d7ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fee1d80142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fee1b62a610  [/lib64/libc.so.6]
+ 8: 0x7fee1b62a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3341964]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f00f705df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f00f70faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f00f70fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f00f7004870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f00f6fff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f00f700142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f00f4e2a610  [/lib64/libc.so.6]
+ 8: 0x7f00f4e2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3348222]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f3912e5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f3912efaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f3912efc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f3912e04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f3912dff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f3912e0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f3910c2a610  [/lib64/libc.so.6]
+ 8: 0x7f3910c2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3354302]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f0e00c5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f0e00cfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f0e00cfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f0e00c04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f0e00bff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f0e00c0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f0dfea2a610  [/lib64/libc.so.6]
+ 8: 0x7f0dfea2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3367160]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fd47825df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fd4782faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fd4782fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fd478204870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fd4781ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fd47820142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fd47602a610  [/lib64/libc.so.6]
+ 8: 0x7fd47602a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3378816]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f665805df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f66580faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f66580fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f6658004870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f6657fff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f665800142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f6655e2a610  [/lib64/libc.so.6]
+ 8: 0x7f6655e2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3382268]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f694225df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f69422faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f69422fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f6942204870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f69421ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f694220142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f694002a610  [/lib64/libc.so.6]
+ 8: 0x7f694002a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3382694]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f17d1a5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f17d1afaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f17d1afc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f17d1a04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f17d19ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f17d1a0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f17cf82a610  [/lib64/libc.so.6]
+ 8: 0x7f17cf82a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3388047]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f0047a5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f0047afaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f0047afc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f0047a04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f00479ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f0047a0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f004582a610  [/lib64/libc.so.6]
+ 8: 0x7f004582a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3393995]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f5a3605df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f5a360faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f5a360fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f5a36004870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f5a35fff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f5a3600142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f5a33e2a610  [/lib64/libc.so.6]
+ 8: 0x7f5a33e2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3399357]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fbc3065df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fbc306faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fbc306fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fbc30604870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fbc305ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fbc3060142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fbc2e42a610  [/lib64/libc.so.6]
+ 8: 0x7fbc2e42a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3399999]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f409a65df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f409a6faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f409a6fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f409a604870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f409a5ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f409a60142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f409842a610  [/lib64/libc.so.6]
+ 8: 0x7f409842a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3401538]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f24b0e5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f24b0efaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f24b0efc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f24b0e04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f24b0dff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f24b0e0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f24aec2a610  [/lib64/libc.so.6]
+ 8: 0x7f24aec2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3405662]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f37d7e5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f37d7efaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f37d7efc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f37d7e04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f37d7dff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f37d7e0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f37d5c2a610  [/lib64/libc.so.6]
+ 8: 0x7f37d5c2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3406437]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fa51225df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fa5122faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fa5122fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fa512204870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fa5121ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fa51220142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fa51002a610  [/lib64/libc.so.6]
+ 8: 0x7fa51002a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3408966]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fb391c5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fb391cfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fb391cfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fb391c04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fb391bff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fb391c0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fb38fa2a610  [/lib64/libc.so.6]
+ 8: 0x7fb38fa2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3418332]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f64d5c5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f64d5cfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f64d5cfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f64d5c04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f64d5bff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f64d5c0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f64d3a2a610  [/lib64/libc.so.6]
+ 8: 0x7f64d3a2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3488243]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f2b72a5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f2b72afaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f2b72afc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f2b72a04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f2b729ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f2b72a0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f2b7082a610  [/lib64/libc.so.6]
+ 8: 0x7f2b7082a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3488447]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f968345df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f96834faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f96834fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f9683404870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f96833ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f968340142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f968122a610  [/lib64/libc.so.6]
+ 8: 0x7f968122a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3489037]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f8b0565df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f8b056faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f8b056fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f8b05604870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f8b055ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f8b0560142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f8b0342a610  [/lib64/libc.so.6]
+ 8: 0x7f8b0342a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3493111]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7efcc185df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7efcc18faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7efcc18fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7efcc1804870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7efcc17ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7efcc180142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7efcbf62a610  [/lib64/libc.so.6]
+ 8: 0x7efcbf62a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3542952]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f2063c5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f2063cfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f2063cfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f2063c04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f2063bff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f2063c0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f2061a2a610  [/lib64/libc.so.6]
+ 8: 0x7f2061a2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3543592]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f491f45df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f491f4faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f491f4fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f491f404870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f491f3ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f491f40142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f491d22a610  [/lib64/libc.so.6]
+ 8: 0x7f491d22a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3567346]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f01b525df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f01b52faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f01b52fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f01b5204870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f01b51ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f01b520142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f01b302a610  [/lib64/libc.so.6]
+ 8: 0x7f01b302a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3569733]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f24e245df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f24e24faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f24e24fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f24e2404870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f24e23ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f24e240142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f24e022a610  [/lib64/libc.so.6]
+ 8: 0x7f24e022a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3575691]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f914525df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f91452faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f91452fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f9145204870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f91451ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f914520142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f914302a610  [/lib64/libc.so.6]
+ 8: 0x7f914302a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3575893]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f81c645df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f81c64faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f81c64fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f81c6404870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f81c63ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f81c640142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f81c422a610  [/lib64/libc.so.6]
+ 8: 0x7f81c422a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3576569]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fc39a05df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fc39a0faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fc39a0fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fc39a004870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fc399fff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fc39a00142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fc397e2a610  [/lib64/libc.so.6]
+ 8: 0x7fc397e2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3577908]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f8622c5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f8622cfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f8622cfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f8622c04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f8622bff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f8622c0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f8620a2a610  [/lib64/libc.so.6]
+ 8: 0x7f8620a2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3578101]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fcb9745df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fcb974faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fcb974fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fcb97404870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fcb973ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fcb9740142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fcb9522a610  [/lib64/libc.so.6]
+ 8: 0x7fcb9522a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3578894]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f8a76c5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f8a76cfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f8a76cfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f8a76c04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f8a76bff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f8a76c0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f8a74a2a610  [/lib64/libc.so.6]
+ 8: 0x7f8a74a2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3580015]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f760225df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f76022faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f76022fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f7602204870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f76021ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f760220142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f760002a610  [/lib64/libc.so.6]
+ 8: 0x7f760002a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3580684]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f0334c5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f0334cfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f0334cfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f0334c04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f0334bff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f0334c0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f0332a2a610  [/lib64/libc.so.6]
+ 8: 0x7f0332a2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3583823]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fc75ae5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fc75aefaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fc75aefc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fc75ae04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fc75adff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fc75ae0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fc758c2a610  [/lib64/libc.so.6]
+ 8: 0x7fc758c2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3584369]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f447bc5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f447bcfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f447bcfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f447bc04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f447bbff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f447bc0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f4479a2a610  [/lib64/libc.so.6]
+ 8: 0x7f4479a2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3640819]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f6977c5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f6977cfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f6977cfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f6977c04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f6977bff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f6977c0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f6975a2a610  [/lib64/libc.so.6]
+ 8: 0x7f6975a2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3641038]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fd31e45df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fd31e4faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fd31e4fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fd31e404870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fd31e3ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fd31e40142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fd31c22a610  [/lib64/libc.so.6]
+ 8: 0x7fd31c22a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3641205]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f4b28a5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f4b28afaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f4b28afc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f4b28a04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f4b289ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f4b28a0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f4b2682a610  [/lib64/libc.so.6]
+ 8: 0x7f4b2682a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3724541]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7ff39ec5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7ff39ecfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7ff39ecfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7ff39ec04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7ff39ebff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7ff39ec0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7ff39ca2a610  [/lib64/libc.so.6]
+ 8: 0x7ff39ca2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3724746]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fa070e5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fa070efaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fa070efc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fa070e04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fa070dff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fa070e0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fa06ec2a610  [/lib64/libc.so.6]
+ 8: 0x7fa06ec2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3725108]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f7cd6c5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f7cd6cfaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f7cd6cfc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f7cd6c04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f7cd6bff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f7cd6c0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f7cd4a2a610  [/lib64/libc.so.6]
+ 8: 0x7f7cd4a2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3725305]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f5c0ee5df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f5c0eefaefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f5c0eefc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f5c0ee04870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f5c0edff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f5c0ee0142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f5c0cc2a610  [/lib64/libc.so.6]
+ 8: 0x7f5c0cc2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3729303]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7fd4f705df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7fd4f70faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7fd4f70fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7fd4f7004870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7fd4f6fff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7fd4f700142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7fd4f4e2a610  [/lib64/libc.so.6]
+ 8: 0x7fd4f4e2a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
+
+  #  /opt/alt/alt-nodejs22/root/bin/node[3733063]: std::unique_ptr<long unsigned int> node::WorkerThreadsTaskRunner::DelayedTaskScheduler::Start() at ../src/node_platform.cc:103
+  #  Assertion failed: (0) == (uv_thread_create(t.get(), start_thread, this))
+
+----- Native stack trace -----
+
+ 1: 0x7f65e025df20 node::Assert(node::AssertionInfo const&) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 2: 0x7f65e02faefc node::WorkerThreadsTaskRunner::WorkerThreadsTaskRunner(int, node::PlatformDebugLogLevel) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 3: 0x7f65e02fc078 node::NodePlatform::NodePlatform(int, v8::TracingController*, v8::PageAllocator*) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 4: 0x7f65e0204870 node::V8Platform::Initialize(int) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 5: 0x7f65e01ff058  [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 6: 0x7f65e020142c node::Start(int, char**) [/opt/alt/alt-nodejs22/root/usr/bin/../lib/libnode.so.127]
+ 7: 0x7f65de02a610  [/lib64/libc.so.6]
+ 8: 0x7f65de02a6c0 __libc_start_main [/lib64/libc.so.6]
+ 9: 0x402035 _start [/opt/alt/alt-nodejs22/root/bin/node]
