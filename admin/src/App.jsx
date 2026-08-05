@@ -23,7 +23,6 @@ import Coupons from "./pages/Coupons";
 import Attributes from "./pages/Attributes";
 import CategoryAttribute from "./pages/CategoryAttribute";
 import SEO from "./pages/SEO";
-import Footer from "../../frontend/src/components/Footer";
 import FooterLinks from "./pages/Footer";
 import PopularProducts from "./pages/PopularProducts";
 import MostSellingProducts from "./pages/MostSellingProducts";
