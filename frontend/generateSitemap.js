@@ -54,11 +54,10 @@ const staticPages = [
 
 /* ================= URL BUILDERS — EDIT IF YOUR ROUTES DIFFER ================= */
 
-// Assumption: product detail route is /product/:id (based on backend
-// using findByPk(id), not a slug). Change this if your React Router
-// route is e.g. /product/:slug or /product/:id/:slug
+// Product detail route is /productPage/:slug (backend resolves products by
+// slug now, falling back to id for older/legacy links).
 function buildProductUrl(product) {
-  return `/product/${product.id}`;
+  return `/productPage/${product.slug || product.id}`;
 }
 
 // Category has a real `slug` field (backend generates it via slugify(name)),
