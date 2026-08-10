@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Jodit's editing area has a white background, but the dark admin theme's
+   `text-white` (applied on an ancestor) cascades into it, making typed text
+   invisible until selected. Force dark text inside Jodit regardless. */
+.jodit-wysiwyg,
+.jodit-wysiwyg * {
+  color: #111827 !important;
+}
+
 
 /* body {
   overflow: hidden;

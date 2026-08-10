@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import DOMPurify from "dompurify";
 import {
   getProductByIdApi,
   getProductReviewsApi,
@@ -119,6 +120,14 @@ function normalizeProductResponse(res) {
     return { ...res, specifications: JSON.parse(res.specifications) };
   }
   return res;
+}
+
+/** Strips tags for plain-text contexts (e.g. <meta name="description">) — descriptions are rich HTML now. */
+function stripHtml(html) {
+  return String(html ?? "")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function normalizeProductReviewsPayload(data) {
@@ -971,9 +980,21 @@ export default function ProductPage() {
 
   const pdpMetaDescription = useMemo(() => {
     if (!product) return "";
-    const fallback = String(product.meta_description || summaryDescription || product.name || "").trim();
+    const fallback = String(
+      product.meta_description || stripHtml(summaryDescription) || product.name || "",
+    ).trim();
     return fallback.length > 160 ? `${fallback.slice(0, 157).trim()}...` : fallback;
   }, [product, summaryDescription]);
+
+  /** short_description is rich HTML from the admin's Jodit editor — sanitize
+   * before dangerouslySetInnerHTML. Skipped during SSR (no DOM there); the
+   * backend already sanitizes on save, so the raw value is safe either way. */
+  const safeSummaryHtml = useMemo(() => {
+    if (!summaryDescription) return "";
+    return typeof window !== "undefined"
+      ? DOMPurify.sanitize(summaryDescription)
+      : summaryDescription;
+  }, [summaryDescription]);
 
   /** Which spec table is shown — variant heading sirf tab jab table variant ki ho, product specs par nahi. */
   const { detailSpecs, specsTableSource } = useMemo(() => {
@@ -1630,9 +1651,10 @@ export default function ProductPage() {
                   <h3 className="text-lg font-semibold mb-3 text-gray-800">
                     Description
                   </h3>
-                  <p className="leading-relaxed whitespace-pre-wrap text-gray-600">
-                    {summaryDescription}
-                  </p>
+                  <div
+                    className="leading-relaxed whitespace-pre-wrap text-gray-600 [&_a]:text-primaryColor [&_a]:underline [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:list-disc [&_ul]:pl-5"
+                    dangerouslySetInnerHTML={{ __html: safeSummaryHtml }}
+                  />
                 </div>
               ) : null}
 

@@ -8,6 +8,7 @@ const {
   coerceIncomingVariantFields,
   parseJsonIfString,
 } = require("../utils/variantSpecifications");
+const { sanitizeRichText } = require("../utils/richText");
 
 const VARIANT_CREATE_FIELDS = [
   "product_id",
@@ -141,7 +142,7 @@ exports.bulkSave = async (req, res) => {
           {
             product_id,
             variantAttrs: normalizeVariantAttrs(v.attributes),
-            short_description: v.short_description ?? null,
+            short_description: sanitizeRichText(v.short_description) || null,
             heading: variantHeading,
             price: Number(v.price) || 0,
             old_price:

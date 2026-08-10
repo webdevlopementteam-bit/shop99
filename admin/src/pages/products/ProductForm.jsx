@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { X, Layers, Plus, Trash2 } from "lucide-react";
+import JoditEditor from "jodit-react";
 import {
   createProductApi,
   updateProductApi,
@@ -624,6 +625,33 @@ const ProductForm = ({ editId }) => {
 
   const variantDataRef = useRef(variantData);
   variantDataRef.current = variantData;
+
+  /** Shared across every variant's editor instance — must stay referentially
+   * stable or Jodit reinitializes (losing focus/cursor) on each render. */
+  const joditConfig = useMemo(
+    () => ({
+      readonly: false,
+      height: 200,
+      placeholder: "Variant-specific description",
+      toolbarAdaptive: false,
+      buttons: [
+        "bold",
+        "italic",
+        "underline",
+        "|",
+        "ul",
+        "ol",
+        "|",
+        "link",
+        "|",
+        "align",
+        "|",
+        "undo",
+        "redo",
+      ],
+    }),
+    [],
+  );
 
   const navigate = useNavigate();
 
@@ -1993,17 +2021,17 @@ const ProductForm = ({ editId }) => {
                           <label className="mb-1 block text-[10px] uppercase tracking-wide text-gray-500">
                             Short description
                           </label>
-                          <textarea
-                            rows={3}
-                            placeholder="Variant-specific description"
-                            value={v.short_description ?? ""}
-                            onChange={(e) => {
-                              const updated = [...variantData];
-                              updated[i].short_description = e.target.value;
-                              setVariantData(updated);
-                            }}
-                            className="w-full rounded-lg border border-gray-700 bg-[#111827] px-3 py-2 text-sm text-white placeholder:text-gray-600 focus:border-[#00C2A8]/50 focus:outline-none focus:ring-1 focus:ring-[#00C2A8]/30"
-                          />
+                          <div className="overflow-hidden rounded-lg border border-gray-700">
+                            <JoditEditor
+                              value={v.short_description ?? ""}
+                              config={joditConfig}
+                              onBlur={(newContent) => {
+                                const updated = [...variantData];
+                                updated[i].short_description = newContent;
+                                setVariantData(updated);
+                              }}
+                            />
+                          </div>
                         </div>
 
                         <div className="mt-4">

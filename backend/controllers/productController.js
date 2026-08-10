@@ -32,6 +32,7 @@ const {
   generateUniqueSlug,
   buildMetaDescription
 } = require("../utils/slugify");
+const { sanitizeRichText } = require("../utils/richText");
 
 
 
@@ -289,7 +290,7 @@ async function replaceProductVariants(productId, variantsPayload, transaction) {
       {
         product_id: productId,
         variantAttrs,
-        short_description: v.short_description ?? null,
+        short_description: sanitizeRichText(v.short_description) || null,
         heading: variantHeading,
         price: Number(v.price) || 0,
         old_price:
