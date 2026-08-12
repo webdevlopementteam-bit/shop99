@@ -1178,6 +1178,7 @@ export default function ProductPage() {
       <Helmet>
         <title>{pdpMetaTitle}</title>
         <meta name="description" content={pdpMetaDescription} />
+        <link rel="canonical" href={`https://www.shop99.co.in${location.pathname}`} />
       </Helmet>
 
       <div className="min-h-screen w-full overflow-x-hidden bg-gray-100">
