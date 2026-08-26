@@ -32,6 +32,7 @@ import {
   Image as ImageIcon,
   MessageSquare,
   Sparkles,
+  ShieldCheck,
   UserCircle,
   Mail,
   BookOpen,
@@ -236,7 +237,8 @@ export default function Sidebar() {
          <MenuSection icon={ShoppingCart} title="Sales">
             <SidebarLink to="/orders" label="Orders" icon={ClipboardList} closeSidebar={() => setIsOpen(false)} />
             <SidebarLink to="/all-orders" label="All Orders" icon={ClipboardList} closeSidebar={() => setIsOpen(false)} />
-          
+            <SidebarLink to="/warranty" label="Warranty Register" icon={ShieldCheck} closeSidebar={() => setIsOpen(false)} />
+
           </MenuSection>
 
           {/* REPORTS */}

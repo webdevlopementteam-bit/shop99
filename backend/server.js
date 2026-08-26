@@ -67,6 +67,8 @@ app.use("/api/payment", require("./routes/paymentRoutes"))
 
 app.use("/api/orders", require("./routes/orderRoutes"))
 
+app.use("/api/warranty", require("./routes/warrantyRoutes"))
+
 app.use("/api/offers", require("./routes/offerRoutes"));
 
 app.use("/api/coupons", require("./routes/couponRoutes"));

@@ -37,6 +37,7 @@ import AdminUser from "./pages/AdminUser";
 import Blogs from "./pages/Blogs";
 import About from "./pages/About";
 import AllOrders from "./pages/AllOrders";
+import Warranty from "./pages/Warranty";
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
 
             <Route path="/orders" element={<Order />} />
             <Route path="/all-orders" element={<AllOrders />} />
+            <Route path="/warranty" element={<Warranty />} />
 
             <Route path="/brands" element={<Brands />} />
 

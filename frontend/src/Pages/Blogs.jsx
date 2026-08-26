@@ -9,10 +9,10 @@ const toText = (value) => {
 };
 
 const getBlogExcerpt = (blog) => {
-  const answer = toText(blog?.answer);
-  if (answer) return answer;
-  const question = toText(blog?.question);
-  if (question) return question;
+  const description = toText(blog?.meta_description);
+  if (description) return description;
+  const content = toText(blog?.content).replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  if (content) return content.slice(0, 160);
   return "Read more about this blog.";
 };
 
@@ -35,7 +35,7 @@ function formatBlogDate(value) {
 }
 
 function blogPath(blog) {
-  return `/blog/${blog.id}`;
+  return `/blog/${blog.slug || blog.id}`;
 }
 
 export default function Blogs() {

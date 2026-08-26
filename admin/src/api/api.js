@@ -2,8 +2,8 @@ import axios from "axios";
 
 // export const BASE_URL = "https://api.shop99.cybertricksmedia.in";
 // export const BASE_URL = "https://api.shop99.co";
-export const BASE_URL = "https://api.shop99.co.in";
-// export const BASE_URL = "http://localhost:9001";
+// export const BASE_URL = "https://api.shop99.co.in";
+export const BASE_URL = "http://localhost:9001";
 
 export const FRONTEND_URL = "https://www.shop99.co.in";
 export const IMAGE_URL = `${BASE_URL}/uploads/`;
@@ -346,6 +346,18 @@ export const downloadLabelApi = async (id) => {
   return res.data;
 };
 
+
+/* ================= WARRANTY REGISTRATIONS ================= */
+
+export const getWarrantyRequestsApi = async () => {
+  const res = await Api.get("/warranty");
+  return res.data;
+};
+
+export const updateWarrantyStatusApi = async (id, status) => {
+  const res = await Api.put(`/warranty/${id}/status`, { status });
+  return res.data;
+};
 
 /* ================= ATTRIBUTES ================= */
 

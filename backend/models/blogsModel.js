@@ -17,32 +17,25 @@ const Blogs = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    question: {
+    slug: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true,
+    },
+    content: {
+      type: DataTypes.TEXT("long"),
+      allowNull: true,
+    },
+    meta_title: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+    },
+    meta_description: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    answer: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
-    features: {
-      type: DataTypes.JSON,
-      allowNull: true,
-    },
-    benefits: {
-      type: DataTypes.JSON,
-      allowNull: true,
-    },
-    why_choose_us: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
-    conclusion: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
-    faq: {
-      type: DataTypes.JSON,
+    meta_keywords: {
+      type: DataTypes.STRING(500),
       allowNull: true,
     },
   },

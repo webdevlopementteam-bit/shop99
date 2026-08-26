@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import JoditEditor from "jodit-react";
 import { toast } from "react-toastify";
 import {
   createBlogApi,
@@ -12,32 +13,12 @@ const createInitialForm = () => ({
   id: null,
   image: null,
   title: "",
-  question: "",
-  answer: "",
-  featuresText: "",
-  benefitsText: "",
-  why_choose_us: "",
-  conclusion: "",
-  faqRows: [{ question: "", answer: "" }],
+  slug: "",
+  content: "",
+  meta_title: "",
+  meta_description: "",
+  meta_keywords: "",
 });
-
-const toLineText = (value) =>
-  Array.isArray(value) ? value.filter(Boolean).join("\n") : "";
-
-const normalizeFaq = (faq) => {
-  if (!Array.isArray(faq) || faq.length === 0) {
-    return [{ question: "", answer: "" }];
-  }
-
-  const rows = faq
-    .map((item) => ({
-      question: String(item?.question ?? item?.q ?? "").trim(),
-      answer: String(item?.answer ?? item?.a ?? "").trim(),
-    }))
-    .filter((item) => item.question || item.answer);
-
-  return rows.length > 0 ? rows : [{ question: "", answer: "" }];
-};
 
 export default function Blogs() {
   const [form, setForm] = useState(createInitialForm);
@@ -46,6 +27,36 @@ export default function Blogs() {
   const [saving, setSaving] = useState(false);
 
   const isEditing = useMemo(() => Boolean(form.id), [form.id]);
+
+  const joditConfig = useMemo(
+    () => ({
+      readonly: false,
+      height: 420,
+      placeholder: "Write the blog content here...",
+      toolbarAdaptive: false,
+      buttons: [
+        "bold",
+        "italic",
+        "underline",
+        "strikethrough",
+        "|",
+        "ul",
+        "ol",
+        "|",
+        "paragraph",
+        "|",
+        "link",
+        "image",
+        "table",
+        "|",
+        "align",
+        "|",
+        "undo",
+        "redo",
+      ],
+    }),
+    [],
+  );
 
   const fetchBlogs = async () => {
     try {
@@ -77,59 +88,14 @@ export default function Blogs() {
     setForm((prev) => ({ ...prev, image: file }));
   };
 
-  const updateFaqRow = (idx, key, value) => {
-    setForm((prev) => {
-      const nextRows = prev.faqRows.map((row, i) =>
-        i === idx ? { ...row, [key]: value } : row
-      );
-      return { ...prev, faqRows: nextRows };
-    });
-  };
-
-  const addFaqRow = () => {
-    setForm((prev) => ({
-      ...prev,
-      faqRows: [...prev.faqRows, { question: "", answer: "" }],
-    }));
-  };
-
-  const removeFaqRow = (idx) => {
-    setForm((prev) => {
-      const nextRows = prev.faqRows.filter((_, i) => i !== idx);
-      return {
-        ...prev,
-        faqRows: nextRows.length ? nextRows : [{ question: "", answer: "" }],
-      };
-    });
-  };
-
   const buildPayload = () => {
-    const features = form.featuresText
-      .split("\n")
-      .map((item) => item.trim())
-      .filter(Boolean);
-
-    const benefits = form.benefitsText
-      .split("\n")
-      .map((item) => item.trim())
-      .filter(Boolean);
-
-    const faq = form.faqRows
-      .map((row) => ({
-        question: String(row.question || "").trim(),
-        answer: String(row.answer || "").trim(),
-      }))
-      .filter((row) => row.question || row.answer);
-
     const fd = new FormData();
     fd.append("title", form.title.trim());
-    fd.append("question", form.question.trim());
-    fd.append("answer", form.answer.trim());
-    fd.append("features", JSON.stringify(features));
-    fd.append("benefits", JSON.stringify(benefits));
-    fd.append("why_choose_us", form.why_choose_us.trim());
-    fd.append("conclusion", form.conclusion.trim());
-    fd.append("faq", JSON.stringify(faq));
+    fd.append("slug", form.slug.trim());
+    fd.append("content", form.content || "");
+    fd.append("meta_title", form.meta_title.trim());
+    fd.append("meta_description", form.meta_description.trim());
+    fd.append("meta_keywords", form.meta_keywords.trim());
 
     if (form.image instanceof File) {
       fd.append("image", form.image);
@@ -170,13 +136,11 @@ export default function Blogs() {
       id: blog.id,
       image: blog.image || null,
       title: blog.title || "",
-      question: blog.question || "",
-      answer: blog.answer || "",
-      featuresText: toLineText(blog.features),
-      benefitsText: toLineText(blog.benefits),
-      why_choose_us: blog.why_choose_us || "",
-      conclusion: blog.conclusion || "",
-      faqRows: normalizeFaq(blog.faq),
+      slug: blog.slug || "",
+      content: blog.content || "",
+      meta_title: blog.meta_title || "",
+      meta_description: blog.meta_description || "",
+      meta_keywords: blog.meta_keywords || "",
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -251,114 +215,70 @@ export default function Blogs() {
         )}
 
         <div>
-          <label className="text-xs text-gray-400">Question / Intro</label>
-          <textarea
-            name="question"
-            value={form.question}
-            onChange={handleChange}
-            rows={3}
-            className="w-full mt-1 bg-[#0B0F19] border border-gray-700 p-3 rounded-lg text-sm"
-          />
-        </div>
-
-        <div>
-          <label className="text-xs text-gray-400">Answer</label>
-          <textarea
-            name="answer"
-            value={form.answer}
-            onChange={handleChange}
-            rows={3}
-            className="w-full mt-1 bg-[#0B0F19] border border-gray-700 p-3 rounded-lg text-sm"
-          />
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-4">
-          <div>
-            <label className="text-xs text-gray-400">
-              Features (one line = one item)
-            </label>
-            <textarea
-              name="featuresText"
-              value={form.featuresText}
-              onChange={handleChange}
-              rows={5}
-              className="w-full mt-1 bg-[#0B0F19] border border-gray-700 p-3 rounded-lg text-sm"
-            />
-          </div>
-
-          <div>
-            <label className="text-xs text-gray-400">
-              Benefits (one line = one item)
-            </label>
-            <textarea
-              name="benefitsText"
-              value={form.benefitsText}
-              onChange={handleChange}
-              rows={5}
-              className="w-full mt-1 bg-[#0B0F19] border border-gray-700 p-3 rounded-lg text-sm"
+          <label className="text-xs text-gray-400">Content</label>
+          <div className="mt-1">
+            <JoditEditor
+              value={form.content}
+              config={joditConfig}
+              onBlur={(newContent) =>
+                setForm((prev) => ({ ...prev, content: newContent }))
+              }
             />
           </div>
         </div>
 
-        <div>
-          <label className="text-xs text-gray-400">Why Choose Us</label>
-          <textarea
-            name="why_choose_us"
-            value={form.why_choose_us}
-            onChange={handleChange}
-            rows={3}
-            className="w-full mt-1 bg-[#0B0F19] border border-gray-700 p-3 rounded-lg text-sm"
-          />
-        </div>
+        <div className="rounded-xl border border-gray-800 bg-[#0B0F19] p-4 space-y-4">
+          <h3 className="text-sm font-semibold text-gray-200">SEO</h3>
 
-        <div>
-          <label className="text-xs text-gray-400">Conclusion</label>
-          <textarea
-            name="conclusion"
-            value={form.conclusion}
-            onChange={handleChange}
-            rows={3}
-            className="w-full mt-1 bg-[#0B0F19] border border-gray-700 p-3 rounded-lg text-sm"
-          />
-        </div>
-
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <label className="text-xs text-gray-400">FAQ</label>
-            <button
-              type="button"
-              onClick={addFaqRow}
-              className="text-xs bg-[#00C2A8]/20 text-[#00C2A8] px-2 py-1 rounded"
-            >
-              Add FAQ
-            </button>
-          </div>
-
-          {form.faqRows.map((row, idx) => (
-            <div key={idx} className="grid md:grid-cols-2 gap-3">
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <label className="text-xs text-gray-400">Custom Slug</label>
               <input
-                value={row.question}
-                onChange={(e) => updateFaqRow(idx, "question", e.target.value)}
-                placeholder="Question"
-                className="bg-[#0B0F19] border border-gray-700 p-3 rounded-lg text-sm"
+                name="slug"
+                value={form.slug}
+                onChange={handleChange}
+                placeholder="e.g. how-to-choose-a-laptop"
+                className="w-full mt-1 bg-[#111827] border border-gray-700 p-3 rounded-lg text-sm"
               />
-              <div className="flex gap-2">
-                <input
-                  value={row.answer}
-                  onChange={(e) => updateFaqRow(idx, "answer", e.target.value)}
-                  placeholder="Answer"
-                  className="flex-1 bg-[#0B0F19] border border-gray-700 p-3 rounded-lg text-sm"
-                />
-                <button
-                  type="button"
-                  onClick={() => removeFaqRow(idx)}
-                  className="px-3 bg-red-500/20 text-red-400 rounded-lg"
-                >
-                  X
-                </button>
-              </div>
+              <p className="mt-1 text-xs text-gray-500">
+                Leave blank to auto-generate from the title.
+              </p>
             </div>
-          ))}
+
+            <div>
+              <label className="text-xs text-gray-400">Meta Title</label>
+              <input
+                name="meta_title"
+                value={form.meta_title}
+                onChange={handleChange}
+                placeholder="Leave blank to use the blog title"
+                className="w-full mt-1 bg-[#111827] border border-gray-700 p-3 rounded-lg text-sm"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="text-xs text-gray-400">Meta Description</label>
+            <textarea
+              name="meta_description"
+              value={form.meta_description}
+              onChange={handleChange}
+              rows={3}
+              placeholder="Leave blank to auto-generate from the content"
+              className="w-full mt-1 bg-[#111827] border border-gray-700 p-3 rounded-lg text-sm"
+            />
+          </div>
+
+          <div>
+            <label className="text-xs text-gray-400">Meta Keywords</label>
+            <input
+              name="meta_keywords"
+              value={form.meta_keywords}
+              onChange={handleChange}
+              placeholder="comma, separated, keywords"
+              className="w-full mt-1 bg-[#111827] border border-gray-700 p-3 rounded-lg text-sm"
+            />
+          </div>
         </div>
 
         <div className="flex gap-3">
@@ -387,6 +307,7 @@ export default function Blogs() {
             <tr>
               <th className="p-3 text-left">Image</th>
               <th className="p-3 text-left">Title</th>
+              <th className="p-3 text-left">Slug</th>
               <th className="p-3 text-left">Created</th>
               <th className="p-3 text-center">Actions</th>
             </tr>
@@ -394,7 +315,7 @@ export default function Blogs() {
           <tbody>
             {!loading && blogs.length === 0 && (
               <tr>
-                <td className="p-4 text-center text-gray-500" colSpan={4}>
+                <td className="p-4 text-center text-gray-500" colSpan={5}>
                   No blogs found
                 </td>
               </tr>
@@ -413,6 +334,9 @@ export default function Blogs() {
                   )}
                 </td>
                 <td className="p-3">{item.title}</td>
+                <td className="p-3 text-gray-400 font-mono text-xs">
+                  {item.slug || "-"}
+                </td>
                 <td className="p-3">
                   {item.created_at
                     ? new Date(item.created_at).toLocaleDateString()

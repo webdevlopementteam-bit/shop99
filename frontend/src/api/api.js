@@ -1,8 +1,8 @@
 // frontend/api/api.js
 
 import axios from "axios";
-// export const BASE_URL = "http://localhost:9001";
-export const BASE_URL = "https://api.shop99.co.in";
+export const BASE_URL = "http://localhost:9001";
+// export const BASE_URL = "https://api.shop99.co.in";
 
 
 export const IMAGE_URL = `${BASE_URL}/uploads/`;
@@ -416,6 +416,20 @@ export const requestOrderReturnApi = async (id, data) => {
 
 export const requestOrderReplacementApi = async (id, data) => {
   const res = await Api.put(`/orders/${id}/replacement`, data);
+  return res.data;
+};
+
+/* ================= WARRANTY REGISTRATION ================= */
+
+export const createWarrantyApi = async (data) => {
+  const res = await Api.post("/warranty", data, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+  return res.data;
+};
+
+export const getMyWarrantiesApi = async () => {
+  const res = await Api.get("/warranty/my");
   return res.data;
 };
 
