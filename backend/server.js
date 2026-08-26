@@ -96,6 +96,21 @@ app.use("/api/latest-products", require("./routes/latestProductRoutes"));
 app.use("/api/deals", require("./routes/dealRoutes"));
 app.use("/api/blogs", require("./routes/blogsRoutes"));
 
+/* ================= ERROR HANDLER ================= */
+// Catches Multer errors (e.g. field/file size limits) and any other
+// thrown/rejected error so clients get a clean JSON response instead of
+// Express's default HTML page with a stack trace.
+app.use((err, req, res, next) => {
+  if (err && err.name === "MulterError") {
+    return res.status(400).json({ message: `Upload error: ${err.message}` });
+  }
+  if (err) {
+    console.error("UNHANDLED ERROR:", err);
+    return res.status(500).json({ message: "Server error" });
+  }
+  next();
+});
+
 /* ================= SERVER START ================= */
 const start = async () => {
   try {

@@ -10,4 +10,10 @@ const storage = multer.diskStorage({
   }
 });
 
-module.exports = multer({ storage });
+module.exports = multer({
+  storage,
+  // Multer/busboy default fieldSize is 1MB — too small for rich-text fields
+  // (blog `content`, product descriptions, etc.), which routinely exceed
+  // that once pasted from Word/Docs or holding an inline image.
+  limits: { fieldSize: 25 * 1024 * 1024 },
+});
