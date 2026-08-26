@@ -1,8 +1,8 @@
 // frontend/api/api.js
 
 import axios from "axios";
-export const BASE_URL = "http://localhost:9001";
-// export const BASE_URL = "https://api.shop99.co.in";
+// export const BASE_URL = "http://localhost:9001";
+export const BASE_URL = "https://api.shop99.co.in";
 
 
 export const IMAGE_URL = `${BASE_URL}/uploads/`;
