@@ -25,6 +25,7 @@ import MostSellingProducts from "./Pages/MostSellingProducts";
 import ReturnPage from "./Pages/return";
 import Blogs from "./Pages/Blogs";
 import BlogDetail from "./Pages/BlogDetail";
+import WarrantyRegisterPage from "./Pages/WarrantyRegisterPage";
 
 const App = () => {
   const location = useLocation();
@@ -71,6 +72,7 @@ const App = () => {
         <Route path="/brands" element={<Brands />} />
         <Route path="/most-selling-products" element={<MostSellingProducts />} />
         <Route path="/blog" element={<Blogs />} />
+        <Route path="/warranty-register" element={<WarrantyRegisterPage />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         
         <Route path="/retrun" element={<ReturnPage />} />

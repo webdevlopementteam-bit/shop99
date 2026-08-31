@@ -15,10 +15,17 @@ const Warranty = sequelize.define(
       allowNull: true,
     },
 
-    /** references orders.id (numeric PK) */
+    /** "shop99" = bought on this site (order_pk required); "other" = bought elsewhere (no order) */
+    purchase_source: {
+      type: DataTypes.ENUM("shop99", "other"),
+      allowNull: false,
+      defaultValue: "shop99",
+    },
+
+    /** references orders.id (numeric PK) — only set when purchase_source = "shop99" */
     order_pk: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
 
     /** denormalized from orders.order_id for display without a join */

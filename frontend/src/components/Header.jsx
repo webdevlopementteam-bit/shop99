@@ -3332,6 +3332,14 @@ const Header = () => {
               >
                 Blog
               </NavLink>
+
+              <NavLink
+                to="/warranty-register"
+                onClick={closeAllDropdowns}
+                className="shrink-0 px-0.5 transition hover:text-orange-500"
+              >
+                Warranty
+              </NavLink>
             </nav>
           </div>
 

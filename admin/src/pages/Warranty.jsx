@@ -97,6 +97,7 @@ export default function Warranty() {
               <thead className="sticky top-0 z-20">
                 <tr className="bg-[#0B0F19] text-left text-xs font-semibold uppercase tracking-wide text-gray-500 shadow-[0_1px_0_0_rgba(55,65,81,0.6)]">
                   <th className="whitespace-nowrap px-3 py-3 pl-4">#</th>
+                  <th className="whitespace-nowrap px-3 py-3">Source</th>
                   <th className="whitespace-nowrap px-3 py-3">Order</th>
                   <th className="min-w-[160px] px-3 py-3">Product</th>
                   <th className="whitespace-nowrap px-3 py-3">Name</th>
@@ -112,7 +113,7 @@ export default function Warranty() {
                 {!loading && filtered.length === 0 ? (
                   <tr>
                     <td
-                      colSpan={9}
+                      colSpan={10}
                       className="rounded-xl bg-[#0B0F19]/40 px-6 py-16 text-center text-gray-500"
                     >
                       No warranty requests found.
@@ -128,8 +129,20 @@ export default function Warranty() {
                         {index + 1}
                       </td>
 
+                      <td className="whitespace-nowrap px-3 py-3">
+                        {r.purchase_source === "other" ? (
+                          <span className="rounded-full bg-purple-500/10 px-2 py-1 text-xs text-purple-400">
+                            Other
+                          </span>
+                        ) : (
+                          <span className="rounded-full bg-teal-500/10 px-2 py-1 text-xs text-teal-400">
+                            Shop99
+                          </span>
+                        )}
+                      </td>
+
                       <td className="whitespace-nowrap px-3 py-3 font-mono text-xs font-medium text-white">
-                        {r.order_number || r.order_pk}
+                        {r.order_number || r.order_pk || "-"}
                       </td>
 
                       <td

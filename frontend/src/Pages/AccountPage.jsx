@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import {
   getOrdersApi,
   getProfileApi,
@@ -8,7 +8,6 @@ import {
   getOrderInvoiceApi,
   requestOrderReturnApi,
   requestOrderReplacementApi,
-  createWarrantyApi,
   getMyWarrantiesApi,
   getUserAddressesApi,
   createUserAddressApi,
@@ -667,7 +666,6 @@ function OrdersSection({ orders, loading, onOrderActionSuccess }) {
   const [actionSubmitting, setActionSubmitting] = useState(false);
 
   const [warranties, setWarranties] = useState([]);
-  const [showWarrantyForm, setShowWarrantyForm] = useState(false);
 
   const fetchWarranties = async () => {
     try {
@@ -1128,25 +1126,13 @@ function OrdersSection({ orders, loading, onOrderActionSuccess }) {
       <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="text-lg font-semibold sm:text-xl">Order History</h2>
 
-        <button
-          type="button"
-          onClick={() => setShowWarrantyForm(true)}
-          className="w-full rounded-lg bg-orange-500 px-4 py-2 text-sm font-medium text-white hover:bg-orange-600 sm:w-auto"
+        <Link
+          to="/warranty-register"
+          className="w-full rounded-lg bg-orange-500 px-4 py-2 text-center text-sm font-medium text-white hover:bg-orange-600 sm:w-auto"
         >
           Warranty Register
-        </button>
+        </Link>
       </div>
-
-      {showWarrantyForm && (
-        <WarrantyRegisterModal
-          orders={orders}
-          onClose={() => setShowWarrantyForm(false)}
-          onSuccess={async () => {
-            setShowWarrantyForm(false);
-            await fetchWarranties();
-          }}
-        />
-      )}
 
       {loading && <p className="text-sm text-gray-500">Loading...</p>}
 
@@ -1462,162 +1448,6 @@ function OrdersSection({ orders, loading, onOrderActionSuccess }) {
             </React.Fragment>
           );
         })}
-      </div>
-    </div>
-  );
-}
-
-/* ================= WARRANTY REGISTER MODAL ================= */
-
-function WarrantyRegisterModal({ orders, onClose, onSuccess }) {
-  const [form, setForm] = useState({
-    name: "",
-    mobile: "",
-    email: "",
-    order_id: "",
-  });
-  const [invoiceFile, setInvoiceFile] = useState(null);
-  const [submitting, setSubmitting] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const profile = await getProfileApi();
-        setForm((prev) => ({
-          ...prev,
-          name: prev.name || profile?.name || "",
-          mobile: prev.mobile || profile?.phone || profile?.mobile || "",
-          email: prev.email || profile?.email || "",
-        }));
-      } catch {
-        /* prefill is best-effort */
-      }
-    })();
-  }, []);
-
-  const onField = (name) => (e) =>
-    setForm((prev) => ({ ...prev, [name]: e.target.value }));
-
-  const handleSubmit = async () => {
-    const name = form.name.trim();
-    const mobile = form.mobile.trim();
-    const email = form.email.trim();
-
-    if (!name || !mobile || !email || !form.order_id) {
-      toast.error("Please fill all fields and select an order.");
-      return;
-    }
-    if (!invoiceFile) {
-      toast.error("Please upload the invoice.");
-      return;
-    }
-
-    try {
-      setSubmitting(true);
-      const fd = new FormData();
-      fd.append("name", name);
-      fd.append("mobile", mobile);
-      fd.append("email", email);
-      fd.append("order_id", form.order_id);
-      fd.append("invoice", invoiceFile);
-
-      await createWarrantyApi(fd);
-      toast.success("Warranty registration submitted.");
-      await onSuccess?.();
-    } catch (err) {
-      toast.error(
-        err?.response?.data?.message || "Could not submit warranty registration.",
-      );
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  return (
-    <div
-      className="fixed inset-0 z-[120] flex items-center justify-center bg-black/60 p-4"
-      onClick={onClose}
-    >
-      <div
-        className="w-full max-w-lg rounded-xl border bg-white p-5 shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-gray-800">
-            Warranty Register
-          </h3>
-          <button
-            type="button"
-            onClick={onClose}
-            className="rounded-md p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-700"
-          >
-            ✕
-          </button>
-        </div>
-
-        <div className="space-y-3">
-          <input
-            value={form.name}
-            onChange={onField("name")}
-            placeholder="Name"
-            className="w-full rounded-lg border p-2.5 text-sm outline-none focus:border-orange-500"
-          />
-          <input
-            value={form.mobile}
-            onChange={onField("mobile")}
-            placeholder="Mobile Number"
-            className="w-full rounded-lg border p-2.5 text-sm outline-none focus:border-orange-500"
-          />
-          <input
-            value={form.email}
-            onChange={onField("email")}
-            placeholder="Email"
-            type="email"
-            className="w-full rounded-lg border p-2.5 text-sm outline-none focus:border-orange-500"
-          />
-
-          <select
-            value={form.order_id}
-            onChange={onField("order_id")}
-            className="w-full rounded-lg border p-2.5 text-sm outline-none focus:border-orange-500"
-          >
-            <option value="">Select order</option>
-            {orders.map((o) => (
-              <option key={o.id} value={o.id}>
-                #{o.order_id || o.id} — {o.product_name || "Product"}
-              </option>
-            ))}
-          </select>
-
-          <div>
-            <p className="mb-1 text-xs text-gray-500">Upload Invoice</p>
-            <input
-              type="file"
-              accept="image/*,.pdf"
-              onChange={(e) => setInvoiceFile(e.target.files?.[0] || null)}
-              className="w-full text-sm"
-            />
-          </div>
-        </div>
-
-        <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-          <button
-            type="button"
-            disabled={submitting}
-            onClick={handleSubmit}
-            className="rounded-lg bg-orange-500 px-4 py-2 text-sm font-medium text-white disabled:opacity-60"
-          >
-            {submitting ? "Submitting..." : "Submit"}
-          </button>
-          <button
-            type="button"
-            disabled={submitting}
-            onClick={onClose}
-            className="rounded-lg border px-4 py-2 text-sm font-medium"
-          >
-            Cancel
-          </button>
-        </div>
       </div>
     </div>
   );
