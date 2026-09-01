@@ -1,7 +1,7 @@
 import React from "react";
 
-import aboutLarge from "../assets/home/screen.png";
-import wheel from "../assets/home/charger.png";
+/* import aboutLarge from "../assets/home/screen.png";
+ */import wheel from "../assets/home/charger.png";
 import TestimonialSlider from "../components/TestimonialSlider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,8 +11,10 @@ import {
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import SEO from "../components/SEO";
-import aboutBanner from "../assets/banner/bannerAbout.png";
+/* import aboutBanner from "../assets/banner/bannerAbout.png";
 
+ */
+import aboutimg from "../assets/banner/aboutimg.jpeg"
 const features = [
   {
     icon: faTruckFast,
@@ -43,13 +45,13 @@ const AboutUs = () => {
       <SEO page="about" />
 
       
-      <div className="mb-8">
+      {/* <div className="mb-8">
         <img
           src={aboutBanner}
           alt="About Banner"
           className="block w-full h-auto object-contain"
         />
-      </div>
+      </div> */}
 
 
       {/* Story + image */}
@@ -101,9 +103,9 @@ const AboutUs = () => {
               <div className="absolute -bottom-6 -left-6 h-28 w-28 rounded-full bg-primaryColor/20 blur-2xl" />
               <div className="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-gray-200/80">
                 <img
-                  src={aboutLarge}
+                  src={aboutimg}
                   alt="Shop99 products"
-                  className="aspect-[4/3] w-full object-cover"
+                  className="aspect-[4/3] w-full object-contain"
                 />
               </div>
               <div className="absolute -bottom-6 left-4 w-[55%] max-w-[220px] overflow-hidden rounded-2xl border-4 border-white shadow-xl sm:-bottom-8 sm:left-6 md:w-1/2">
