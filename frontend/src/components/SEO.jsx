@@ -68,10 +68,10 @@ const SEO = ({ page }) => {
 
       <meta name="keywords" content={seo?.meta_keywords || ""} />
 
-      <link
-        rel="canonical"
-        href={seo?.canonical_url || `${SITE_URL}${location.pathname}`}
-      />
+      {/* Always self-referencing and code-computed — never trust the admin-typed
+          canonical_url field here. It's free text and has drifted wrong before
+          (missing www, a stale staging domain, even another page's URL). */}
+      <link rel="canonical" href={`${SITE_URL}${location.pathname}`} />
 
       {/* OG */}
       <meta property="og:title" content={seo?.og_title || ""} />

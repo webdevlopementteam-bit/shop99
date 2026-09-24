@@ -3,6 +3,7 @@ import { getBrandsApi, BASE_URL } from "../api/api";
 import { Home } from "lucide-react";
 import brandBanner from "../assets/brands/brand-banner.png";
 import { useNavigate } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function BrandsPage() {
   const [brands, setBrands] = useState([]);
@@ -22,6 +23,8 @@ export default function BrandsPage() {
   };
 
   return (
+  <>
+    <SEO page="brands" />
   <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 py-8">
     <div className="max-w-7xl mx-auto px-4">
 
@@ -36,9 +39,9 @@ export default function BrandsPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/20" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-          <h1 className="text-3xl font-extrabold md:text-5xl">
+          <h2 className="text-3xl font-extrabold md:text-5xl">
             All Brands
-          </h1>
+          </h2>
 
           <div className="mt-4 flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm backdrop-blur-md md:text-base">
             <div
@@ -117,6 +120,7 @@ export default function BrandsPage() {
       )}
     </div>
   </div>
+  </>
 );
 //   return (
 //   <div className="bg-gray-100 min-h-screen py-8">

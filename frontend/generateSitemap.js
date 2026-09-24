@@ -48,8 +48,8 @@ const PRODUCTS_PAGE_SIZE = 100;
 const staticPages = [
   { url: "/", changefreq: "daily", priority: 1.0 },
   { url: "/shop", changefreq: "daily", priority: 0.9 },
-  { url: "/about", changefreq: "monthly", priority: 0.5 },
-  { url: "/contact", changefreq: "monthly", priority: 0.5 },
+  { url: "/about", changefreq: "daily", priority: 0.5 },
+  { url: "/contact", changefreq: "daily", priority: 0.5 },
 ];
 
 /* ================= URL BUILDERS — EDIT IF YOUR ROUTES DIFFER ================= */
@@ -142,7 +142,7 @@ function escapeXml(str) {
     .replace(/'/g, "&apos;");
 }
 
-function urlEntry(loc, { changefreq = "weekly", priority = 0.7, lastmod } = {}) {
+function urlEntry(loc, { changefreq = "daily", priority = 0.7, lastmod } = {}) {
   const lastmodTag = lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : "";
   return `  <url>
     <loc>${escapeXml(loc)}</loc>${lastmodTag}
@@ -184,7 +184,7 @@ async function generateSitemap() {
   categories.forEach((cat) => {
     entries.push(
       urlEntry(`${SITE_URL}${buildCategoryUrl(cat)}`, {
-        changefreq: "weekly",
+        changefreq: "daily",
         priority: 0.7,
         lastmod: today,
       })
@@ -197,7 +197,7 @@ async function generateSitemap() {
   brands.forEach((brand) => {
     entries.push(
       urlEntry(`${SITE_URL}${buildBrandUrl(brand)}`, {
-        changefreq: "weekly",
+        changefreq: "daily",
         priority: 0.6,
         lastmod: today,
       })
@@ -210,7 +210,7 @@ async function generateSitemap() {
   products.forEach((product) => {
     entries.push(
       urlEntry(`${SITE_URL}${buildProductUrl(product)}`, {
-        changefreq: "weekly",
+        changefreq: "daily",
         priority: 0.8,
         lastmod: today,
       })

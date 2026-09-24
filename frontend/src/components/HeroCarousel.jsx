@@ -80,9 +80,9 @@ const HeroCarousel = () => {
                 New Brand
               </span>
 
-              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mt-4 md:mt-6 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mt-4 md:mt-6 leading-tight">
                 {banner.title}
-              </h1>
+              </h2>
 
               <p className="text-gray-600 mt-3 md:mt-4 text-sm sm:text-base max-w-lg">
                 {banner.subtitle}

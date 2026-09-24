@@ -12,6 +12,7 @@ import { Home, Sparkles } from "lucide-react";
 import { countProductVariantsInPayload } from "../utils/productVariants";
 import { getProductDisplayPricing } from "../utils/productPricing";
 import dealsBanner from "../assets/banner/banner-3.png";
+import SEO from "../components/SEO";
 
 const PREVIEW_COUNT = 4;
 
@@ -340,6 +341,8 @@ export default function DealsPage({
   /* ================= FULL PAGE (Brands-style) ================= */
   if (!embedded) {
     return (
+      <>
+        <SEO page="deals" />
       <div className="min-h-screen bg-gradient-to-b from-slate-100 to-slate-50 pb-12 pt-6 sm:pt-8">
         <div className="mx-auto max-w-7xl px-4">
           <div className="relative mb-8 overflow-hidden rounded-2xl shadow-lg">
@@ -411,6 +414,7 @@ export default function DealsPage({
           )}
         </div>
       </div>
+      </>
     );
   }
 
