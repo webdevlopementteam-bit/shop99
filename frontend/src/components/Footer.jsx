@@ -335,7 +335,7 @@ export default function Footer() {
           <p className="text-sm text-white">
             © 2026{" "}
             <span className="text-orange-500 font-semibold">SHOP99 | ALL RIGHTS RESERVED </span>
-            <span className="text-orange-500 font-semibold">| POWERED BY PRAKASH ELECTRONICS (INDIA)</span>
+            <span className="text-orange-500 font-semibold">| POWERED BY SHOP99</span>
 
           </p>
         </div>

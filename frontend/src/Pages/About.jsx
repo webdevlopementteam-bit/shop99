@@ -64,7 +64,7 @@ const AboutUs = () => {
             <div className="mt-2 h-1 w-14 rounded-full bg-secondaryColor" />
             <p className="mt-6 text-gray-600 leading-relaxed">
               <span className="font-semibold text-primaryColor">
-                PRAKASH ELECTRONICS (INDIA) “Shop99”
+                “Shop99”
               </span>{" "}
               is a proprietorship firm incorporated in 2015. Our core business
               covers car audio and video with a diversified range of products —

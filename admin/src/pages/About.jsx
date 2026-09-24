@@ -288,7 +288,7 @@ export default function AboutAdminPage() {
               value={form.company_title}
               onChange={handleChange}
               className="w-full mt-1 bg-[#0B0F19] border border-gray-700 p-3 rounded-lg text-sm"
-              placeholder="PRAKASH ELECTRONICS (INDIA) Shop99"
+              placeholder=" Shop99"
             />
           </div>
         </div>
