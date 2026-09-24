@@ -309,6 +309,10 @@ useEffect(() => {
      <HeroCarousel />
       {/* <div className="bg-primaryColor/30 h-[430px] overflow-hidden relative rounded-3xl mt-7 mx-side before:content-[' '] before:absolute before:w-[360px] before:h-[340px] before:bg-primaryColor before:rotate-12 before:-top-[20px] before:right-20 before:rounded-r-[50%] before:rounded-b-[50%]"></div> */}
 
+      <h1 className="text-center text-2xl sm:text-3xl font-bold text-gray-900 mt-6 mb-2 px-4">
+        Buy Car Accessories Online in India
+      </h1>
+
       <CategorySlider/>
      {/* =================  shop section start (today popular pick) ================= */}
      
@@ -760,17 +764,13 @@ useEffect(() => {
       </div>
     </section>
 
-    {/* ======== SEO: H1 + FAQ section ============ */}
+    {/* ======== SEO: FAQ section ============ */}
     <section className="px-4 sm:px-8 lg:px-24 py-12 sm:py-16">
-      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
-        Buy Car Accessories Online in India
-      </h1>
-
-      <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">
+      <h2 className="text-center text-xl sm:text-2xl font-semibold text-gray-900 mb-6">
         Frequently Asked Questions
       </h2>
 
-      <div className="space-y-3 max-w-4xl">
+      <div className="space-y-3 max-w-4xl mx-auto">
         {HOME_FAQS.map((faq, idx) => (
           <HomeFaqItem
             key={idx}
