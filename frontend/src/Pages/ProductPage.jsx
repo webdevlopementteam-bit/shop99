@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useMemo, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import DOMPurify from "dompurify";
 import {
   getProductByIdApi,
@@ -1175,11 +1174,9 @@ export default function ProductPage() {
 
   return (
     <>
-      <Helmet>
-        <title>{pdpMetaTitle}</title>
-        <meta name="description" content={pdpMetaDescription} />
-        <link rel="canonical" href={`https://www.shop99.co.in${location.pathname}`} />
-      </Helmet>
+      <title>{pdpMetaTitle}</title>
+      <meta name="description" content={pdpMetaDescription} />
+      <link rel="canonical" href={`https://www.shop99.co.in${location.pathname}`} />
 
       <div className="min-h-screen w-full overflow-x-hidden bg-gray-100">
       <div className="h-2 bg-orange-500 sm:h-3" />

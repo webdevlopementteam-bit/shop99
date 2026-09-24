@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
 import { BASE_URL, getBlogByIdApi } from "../api/api";
 import { usePreloadedBlog } from "../context/PreloadedBlogContext";
@@ -88,15 +87,13 @@ export default function BlogDetail() {
 
   return (
     <div className="px-4 sm:px-8 lg:px-24 py-10 sm:py-14">
-      <Helmet>
-        <title>{metaTitle}</title>
-        {metaDescription && <meta name="description" content={metaDescription} />}
-        {blog.meta_keywords && <meta name="keywords" content={blog.meta_keywords} />}
-        <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content={metaTitle} />
-        {metaDescription && <meta property="og:description" content={metaDescription} />}
-        {blog.image && <meta property="og:image" content={image} />}
-      </Helmet>
+      <title>{metaTitle}</title>
+      {metaDescription && <meta name="description" content={metaDescription} />}
+      {blog.meta_keywords && <meta name="keywords" content={blog.meta_keywords} />}
+      <link rel="canonical" href={canonicalUrl} />
+      <meta property="og:title" content={metaTitle} />
+      {metaDescription && <meta property="og:description" content={metaDescription} />}
+      {blog.image && <meta property="og:image" content={image} />}
 
       <Link to="/blog" className="text-sm text-orange-600 font-medium">
         ← Back to blogs

@@ -1,6 +1,5 @@
 // components/SEO.jsx
 
-import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getSEOByPageApi } from "../api/api";
@@ -57,8 +56,16 @@ const SEO = ({ page, canonicalSearch = "" }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, hasMatchingPreload]);
 
+  // Raw tags, no <Helmet> wrapper: React 19 natively hoists <title>/<meta>/
+  // <link> rendered anywhere in the tree, reconciling them like any other
+  // element on every render (mount, update, unmount) as one integrated
+  // system. Helmet's own DOM-patching effect used to *also* manage the same
+  // logical tags on top of that, and the two didn't always agree on timing
+  // across a client-side route change — the previous page's tag could be
+  // left behind while the new page's copy got appended, producing two
+  // <link rel="canonical"> (and duplicate meta tags) at once.
   return (
-    <Helmet>
+    <>
       <title>{seo?.meta_title || "Default Title"}</title>
 
       <meta
@@ -89,7 +96,7 @@ const SEO = ({ page, canonicalSearch = "" }) => {
           content={`https://api.shop99.co.in/uploads/${seo.og_image}`}
         />
       )}
-    </Helmet>
+    </>
   );
 };
 
