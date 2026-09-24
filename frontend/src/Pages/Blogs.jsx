@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SEO from "../components/SEO";
 import { BASE_URL, getBlogsApi } from "../api/api";
 
 const toText = (value) => {
@@ -66,8 +65,6 @@ export default function Blogs() {
 
   return (
     <div className="px-4 sm:px-8 lg:px-24 py-10 sm:py-14">
-      <SEO page="blogs" />
-
       <div className="mb-8 sm:mb-10">
         <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900">Shop99 Blogs</h1>
         <p className="text-sm sm:text-base text-gray-600 mt-2">

@@ -26,6 +26,7 @@ import ReturnPage from "./Pages/return";
 import Blogs from "./Pages/Blogs";
 import BlogDetail from "./Pages/BlogDetail";
 import WarrantyRegisterPage from "./Pages/WarrantyRegisterPage";
+import SEO from "./components/SEO";
 
 const App = () => {
   const location = useLocation();
@@ -42,6 +43,7 @@ const App = () => {
 
   return (
     <>
+      {!isAdminPath && <SEO />}
       {!isAdminPath && <Header />}
 
       <Routes>

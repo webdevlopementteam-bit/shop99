@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { getCategories } from "../services/categoryService";
 import CategoryCard from "../components/CategoryCard";
-import SEO from "../components/SEO";
 
 
 const Categories = () => {
@@ -20,8 +19,6 @@ const Categories = () => {
   };
 
   return (
-    <>
-      <SEO page="categories" />
     <div className="bg-gray-50 min-h-screen">
 
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -50,7 +47,6 @@ const Categories = () => {
       </div>
 
     </div>
-    </>
   );
 };
 

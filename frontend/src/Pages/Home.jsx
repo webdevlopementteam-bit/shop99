@@ -18,7 +18,6 @@ import { toast } from "react-toastify";
 import { BASE_URL } from "../api/api";
 import PopularProductsSlider from "../components/PopularProductsSlider";
 import DealsPage from "./DealsPage";
-import SEO from "../components/SEO";
 import feature1 from "../assets/home/soundAndroid.jpeg";
 import feature3 from "../assets/home/car-speaker.jpeg";
 import feature2 from "../assets/home/car-Amplifier.jpeg";
@@ -302,9 +301,6 @@ useEffect(() => {
   };
   return (
     <>
-
-        <SEO page="home" />
-
       {/* slider */}
      <HeroCarousel />
       {/* <div className="bg-primaryColor/30 h-[430px] overflow-hidden relative rounded-3xl mt-7 mx-side before:content-[' '] before:absolute before:w-[360px] before:h-[340px] before:bg-primaryColor before:rotate-12 before:-top-[20px] before:right-20 before:rounded-r-[50%] before:rounded-b-[50%]"></div> */}

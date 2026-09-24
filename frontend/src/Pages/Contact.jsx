@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../assets/css/index.css";
-import SEO from "../components/SEO";
 
 export default function ContactUs() {
   const [form, setForm] = useState({
@@ -21,8 +20,6 @@ export default function ContactUs() {
   };
 
   return (
-    <>
-      <SEO page="contact" />
     <section className="bg-gradient-to-br from-[#fff7ed] to-[#f3f4f6] py-16">
       <div className="max-w-6xl mx-auto px-4">
 
@@ -99,7 +96,6 @@ export default function ContactUs() {
         </div>
       </div>
     </section>
-    </>
   );
 }
 

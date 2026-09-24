@@ -12,7 +12,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { HelmetProvider } from "react-helmet-async";
 
 // Server embeds the product it fetched for this exact request (see
 // entry-server.jsx) as window.__PRELOADED_PRODUCT__ — reusing it here keeps
@@ -27,22 +26,20 @@ const preloadedBlog =
 
 hydrateRoot(
   document.getElementById("root"),
-  <HelmetProvider>
-    <StrictMode>
-      <BrowserRouter>
-        <AuthProvider>
-          <CartProvider>
-            <PreloadedProductProvider value={preloadedProduct}>
-              <PreloadedSeoProvider value={preloadedSeo}>
-                <PreloadedBlogProvider value={preloadedBlog}>
-                  <App />
-                </PreloadedBlogProvider>
-              </PreloadedSeoProvider>
-            </PreloadedProductProvider>
-            <ToastContainer position="top-right" autoClose={2000} />
-          </CartProvider>
-        </AuthProvider>
-      </BrowserRouter>
-    </StrictMode>
-  </HelmetProvider>
+  <StrictMode>
+    <BrowserRouter>
+      <AuthProvider>
+        <CartProvider>
+          <PreloadedProductProvider value={preloadedProduct}>
+            <PreloadedSeoProvider value={preloadedSeo}>
+              <PreloadedBlogProvider value={preloadedBlog}>
+                <App />
+              </PreloadedBlogProvider>
+            </PreloadedSeoProvider>
+          </PreloadedProductProvider>
+          <ToastContainer position="top-right" autoClose={2000} />
+        </CartProvider>
+      </AuthProvider>
+    </BrowserRouter>
+  </StrictMode>
 );

@@ -10,7 +10,6 @@ import {
   faShieldHalved,
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
-import SEO from "../components/SEO";
 /* import aboutBanner from "../assets/banner/bannerAbout.png";
 
  */
@@ -42,9 +41,6 @@ const highlights = [
 const AboutUs = () => {
   return (
     <>
-      <SEO page="about" />
-
-      
       {/* <div className="mb-8">
         <img
           src={aboutBanner}

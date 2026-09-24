@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import SEO from "../components/SEO";
 import { getProfileApi, getOrdersApi, createWarrantyApi } from "../api/api";
 
 const normalize = (v) =>
@@ -146,7 +145,6 @@ export default function WarrantyRegisterPage() {
   if (submitted) {
     return (
       <div className="mx-auto max-w-xl px-4 py-16 text-center sm:py-24">
-        <SEO page="warranty-register" />
         <h1 className="text-2xl font-semibold text-gray-900">
           Warranty Registered
         </h1>
@@ -166,8 +164,6 @@ export default function WarrantyRegisterPage() {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-10 sm:py-14">
-      <SEO page="warranty-register" />
-
       <h1 className="text-2xl font-semibold text-gray-900 sm:text-3xl">
         Warranty Register
       </h1>

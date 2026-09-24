@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import SEO from "../components/SEO";
 import Pagination from "../components/Pagination";
 import {
   BASE_URL,
@@ -115,7 +114,6 @@ export default function MostSellingProducts() {
 
   return (
     <>
-      <SEO page="most-selling-products" />
       <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-24 py-10">
         <div className="flex items-end justify-between mb-8">
           <div>

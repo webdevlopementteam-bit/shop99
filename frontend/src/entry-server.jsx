@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router";
-import { HelmetProvider } from "react-helmet-async";
 import App from "./App.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
@@ -9,13 +8,15 @@ import { PreloadedProductProvider } from "./context/PreloadedProductContext.jsx"
 import { PreloadedSeoProvider } from "./context/PreloadedSeoContext.jsx";
 import { PreloadedBlogProvider } from "./context/PreloadedBlogContext.jsx";
 import { getProductByIdApi, getSEOByPageApi, getBlogByIdApi } from "./api/api.js";
+import { resolveSeoPageKey } from "./utils/seoPageKey.js";
 
 // ToastContainer is intentionally excluded here — it's a client-only overlay
 // (portals to document.body) and has nothing meaningful to render on first paint.
 
-// React 19 natively hoists <title>/<meta>/<link> rendered anywhere in the tree
-// (that's what powers <Helmet>'s tags too). renderToString has no real <head>
-// to hoist into, so it emits them as a plain prefix on the output string —
+// React 19 natively hoists <title>/<meta>/<link> rendered anywhere in the
+// tree (SEO.jsx, ProductPage.jsx, BlogDetail.jsx all rely on this directly —
+// no react-helmet-async involved). renderToString has no real <head> to
+// hoist into, so it emits them as a plain prefix on the output string —
 // split that prefix off so it lands in the template's real <head> instead of
 // inside #root.
 const HOISTED_HEAD_TAG = /^\s*(<title\b[^>]*>[\s\S]*?<\/title>|<meta\b[^>]*\/?>|<link\b[^>]*\/?>)/;
@@ -51,48 +52,13 @@ async function preloadProductForUrl(url) {
   }
 }
 
-/**
- * Mirrors each page's own `<SEO page="...">` key so the *server* can fetch
- * the same row before rendering — same reasoning as preloadProductForUrl:
- * <SEO> normally fetches in a useEffect (client-only), so without this the
- * SSR HTML (and hydration's first paint) would always show the "Default
- * Title"/"Default description" fallback instead of the admin-saved values,
- * and the fallback tags would end up stuck alongside the real ones once the
- * client fetch resolves (a hydration mismatch <Helmet> can't cleanly patch).
- */
-function resolveSeoPageKeyForUrl(url) {
-  const { pathname, searchParams } = new URL(url, "http://internal");
-
-  if (pathname === "/") return "home";
-  if (pathname === "/about") return "about";
-  if (pathname === "/blog") return "blogs";
-  if (pathname === "/most-selling-products") return "most-selling-products";
-  if (pathname === "/warranty-register") return "warranty-register";
-
-  if (pathname === "/shop") {
-    const slugify = (text) =>
-      text
-        ?.toLowerCase()
-        .replace(/\s+/g, "-")
-        .replace(/[^\w-]+/g, "");
-    const subCategoryParam = searchParams.get("subCategory");
-    const categoryParam = searchParams.get("category");
-    if (subCategoryParam) return `shop-category-${slugify(subCategoryParam)}`;
-    if (categoryParam) return `shop-category-${slugify(categoryParam)}`;
-    return "shop";
-  }
-
-  return null; // Page renders no <SEO> (or isn't one of the above) — nothing to preload.
-}
-
 const BLOG_DETAIL_URL_RE = /^\/blog\/([^/?#]+)/;
 
 /**
  * BlogDetail.jsx normally fetches its post in a useEffect (client-only) —
  * same gap as ProductPage without this: the SSR HTML (and hydration's first
- * paint) would ship a loading/empty state with the "Default"-ish <Helmet>
- * tags instead of the post's real title/description, and once the client
- * fetch resolved the real tags would end up duplicated alongside them.
+ * paint) would ship a loading/empty state with generic tags instead of the
+ * post's real title/description.
  */
 async function preloadBlogForUrl(url) {
   const match = url.match(BLOG_DETAIL_URL_RE);
@@ -106,7 +72,8 @@ async function preloadBlogForUrl(url) {
 }
 
 async function preloadSeoForUrl(url) {
-  const page = resolveSeoPageKeyForUrl(url);
+  const { pathname, searchParams } = new URL(url, "http://internal");
+  const { page } = resolveSeoPageKey(pathname, searchParams);
   if (!page) return null;
 
   try {
@@ -122,7 +89,6 @@ async function preloadSeoForUrl(url) {
 }
 
 export async function render(url) {
-  const helmetContext = {};
   const [preloadedProduct, preloadedSeo, preloadedBlog] = await Promise.all([
     preloadProductForUrl(url),
     preloadSeoForUrl(url),
@@ -131,21 +97,19 @@ export async function render(url) {
 
   const rawHtml = renderToString(
     <StrictMode>
-      <HelmetProvider context={helmetContext}>
-        <StaticRouter location={url}>
-          <AuthProvider>
-            <CartProvider>
-              <PreloadedProductProvider value={preloadedProduct}>
-                <PreloadedSeoProvider value={preloadedSeo}>
-                  <PreloadedBlogProvider value={preloadedBlog}>
-                    <App />
-                  </PreloadedBlogProvider>
-                </PreloadedSeoProvider>
-              </PreloadedProductProvider>
-            </CartProvider>
-          </AuthProvider>
-        </StaticRouter>
-      </HelmetProvider>
+      <StaticRouter location={url}>
+        <AuthProvider>
+          <CartProvider>
+            <PreloadedProductProvider value={preloadedProduct}>
+              <PreloadedSeoProvider value={preloadedSeo}>
+                <PreloadedBlogProvider value={preloadedBlog}>
+                  <App />
+                </PreloadedBlogProvider>
+              </PreloadedSeoProvider>
+            </PreloadedProductProvider>
+          </CartProvider>
+        </AuthProvider>
+      </StaticRouter>
     </StrictMode>
   );
 
