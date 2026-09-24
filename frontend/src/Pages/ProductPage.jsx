@@ -436,6 +436,21 @@ export default function ProductPage() {
   const mobileThumbsRef = useRef(null);
   const overflowThumbsRef = useRef(null);
 
+  useEffect(() => {
+    setProduct(hasMatchingPreload ? normalizeProductResponse(preloadedProduct) : null);
+    setLoading(!hasMatchingPreload);
+    setActiveImage("");
+    setActiveVariantIndex(0);
+    setSelectedPartByAttr({});
+    setProductReviews([]);
+    setReviewRating(5);
+    setReviewComment("");
+    setGuestReviewerName("");
+    setReviewPhotoFiles([]);
+    setReviewSubmitting(false);
+    setHasPurchasedProduct(false);
+  }, [slug, hasMatchingPreload, preloadedProduct]);
+
   const [productReviews, setProductReviews] = useState([]);
   const [reviewsLoading, setReviewsLoading] = useState(false);
   const [reviewRating, setReviewRating] = useState(5);
