@@ -36,6 +36,85 @@ import { countProductVariantsInPayload } from "../utils/productVariants";
 import { getProductCategoryLabel } from "../utils/productCategory";
 import { getProductDisplayPricing } from "../utils/productPricing";
 
+const HOME_FAQS = [
+  {
+    q: "Where to buy car accessories online in India?",
+    a: "Shop99 (shop99.co.in) is a trusted online store in India to buy car accessories like speakers, amplifiers, android systems, and sound systems, with doorstep delivery across the country.",
+  },
+  {
+    q: "What is the best car accessories online store in India?",
+    a: "Shop99 is one of the best online stores in India for car accessories, offering genuine products, competitive prices, and a wide range of audio and electronic accessories for cars.",
+  },
+  {
+    q: "Which website is best to buy car speakers and amplifiers online in India?",
+    a: "Shop99 is a reliable website to buy car speakers, amplifiers, and android sound systems online in India, with products sourced from trusted brands.",
+  },
+  {
+    q: "Is it safe to buy car accessories online in India?",
+    a: "Yes, buying car accessories online from a trusted store like Shop99 is safe — products are genuine, quality-checked, and backed by warranty support.",
+  },
+  {
+    q: "Can I buy genuine/original car accessories online in India?",
+    a: "Yes, Shop99 sells 100% genuine car accessories online, sourced directly from trusted and authorized brands.",
+  },
+  {
+    q: "What is the price of car accessories online in India?",
+    a: "Prices vary by product and brand. Shop99 offers car accessories online in India at competitive prices, with regular deals and discounts available on the website.",
+  },
+  {
+    q: "Which online store offers the best deals on car accessories in India?",
+    a: 'Shop99 regularly runs deals and discounts on car accessories — check the "Latest Deals" section on shop99.co.in for current offers.',
+  },
+  {
+    q: "Does any online car accessories store in India offer warranty?",
+    a: "Yes, Shop99 provides manufacturer warranty on select car accessories, which customers can register directly through the website's Warranty page.",
+  },
+  {
+    q: "How can I order car accessories online in India for home delivery?",
+    a: "You can order car accessories online in India through Shop99 by browsing the website, adding products to your cart, and completing checkout — with delivery available pan-India.",
+  },
+  {
+    q: "What types of car accessories can I buy online in India?",
+    a: "You can buy a variety of car accessories online in India from Shop99, including car speakers, amplifiers, Android systems, sound systems, and other audio & electronic accessories.",
+  },
+];
+
+const HOME_FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: HOME_FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
+function HomeFaqItem({ faq, isOpen, onToggle }) {
+  return (
+    <div className="rounded-xl border border-gray-200 overflow-hidden">
+      <button
+        type="button"
+        onClick={onToggle}
+        className="w-full flex items-center justify-between gap-4 p-4 text-left"
+      >
+        <span className="font-medium text-gray-900">{faq.q}</span>
+        <span className="shrink-0 text-orange-600 text-lg leading-none">
+          {isOpen ? "−" : "+"}
+        </span>
+      </button>
+
+      {isOpen && (
+        <div className="px-4 pb-4">
+          <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 const resolveProductImage = (item) => {
   const raw =
     item?.image ??
@@ -67,6 +146,7 @@ const Home = () => {
   const { addToCart } = useCart();
   const [wishlistIds, setWishlistIds] = useState([]);
   const [previewImage, setPreviewImage] = useState(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   const featureCards = [
     {
@@ -678,6 +758,35 @@ useEffect(() => {
         ))}
 
       </div>
+    </section>
+
+    {/* ======== SEO: H1 + FAQ section ============ */}
+    <section className="px-4 sm:px-8 lg:px-24 py-12 sm:py-16">
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+        Buy Car Accessories Online in India
+      </h1>
+
+      <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">
+        Frequently Asked Questions
+      </h2>
+
+      <div className="space-y-3 max-w-4xl">
+        {HOME_FAQS.map((faq, idx) => (
+          <HomeFaqItem
+            key={idx}
+            faq={faq}
+            isOpen={openFaqIndex === idx}
+            onToggle={() =>
+              setOpenFaqIndex((prev) => (prev === idx ? -1 : idx))
+            }
+          />
+        ))}
+      </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_FAQ_SCHEMA) }}
+      />
     </section>
 
   </>
