@@ -9,6 +9,14 @@
 // change could be the *previous* page's (fixed only by a hard refresh).
 // A single always-mounted instance that just re-renders with new content on
 // each navigation avoids that unmount/mount race entirely.
+//
+// Important: render these tags as JSX only — do NOT also manage them via an
+// imperative useEffect (document.head.appendChild/removeChild etc). That was
+// tried once and directly conflicted with React 19's native hoisting of this
+// same JSX: manually removing a <link>/<meta> node that React created and
+// still believes it owns corrupts React's reconciliation, and can throw
+// uncaught DOM exceptions that break the whole tree's interactivity (this
+// broke product-card navigation from the homepage until a hard refresh).
 
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
