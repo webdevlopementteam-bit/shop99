@@ -4,16 +4,34 @@ import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getSEOByPageApi } from "../api/api";
+import { usePreloadedSeo } from "../context/PreloadedSeoContext";
 
 const cache = {};
 const SITE_URL = "https://www.shop99.co.in";
 
 const SEO = ({ page }) => {
-  const [seo, setSeo] = useState(null);
   const location = useLocation();
+
+  const preloadedSeo = usePreloadedSeo();
+  /** Only trust the preload if it's actually for this page — a client-side
+   * nav to a different page leaves the previous request's preload behind. */
+  const hasMatchingPreload = !!preloadedSeo && preloadedSeo.page === page;
+
+  const [seo, setSeo] = useState(() => {
+    if (hasMatchingPreload) return preloadedSeo.data;
+    return cache[page] ?? null;
+  });
 
   useEffect(() => {
     if (!page) return;
+
+    if (hasMatchingPreload) {
+      // Server already fetched the right row and it's in state above —
+      // seed the cache for any later client-side nav back to this page,
+      // no need to re-fetch immediately after hydration.
+      cache[page] = preloadedSeo.data;
+      return;
+    }
 
     if (cache[page]) {
       setSeo(cache[page]);
@@ -36,7 +54,8 @@ const SEO = ({ page }) => {
         setSeo(null);
       }
     })();
-  }, [page]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page, hasMatchingPreload]);
 
   return (
     <Helmet>

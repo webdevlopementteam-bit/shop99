@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
 import { BASE_URL, getBlogByIdApi } from "../api/api";
+import { usePreloadedBlog } from "../context/PreloadedBlogContext";
 
 const toText = (value) => (value == null ? "" : String(value).trim());
 
@@ -25,11 +26,23 @@ function formatBlogDate(value) {
 
 export default function BlogDetail() {
   const { id } = useParams();
-  const [blog, setBlog] = useState(null);
-  const [loading, setLoading] = useState(true);
+
+  const preloadedBlog = usePreloadedBlog();
+  /** Only trust the preload if it's actually for the post this render is for
+   * — a client-side nav to a different post leaves stale preloaded data behind.
+   * The route param can be the slug OR the numeric id, and the server preloads
+   * by whichever was in the URL, so match on either. */
+  const hasMatchingPreload =
+    !!preloadedBlog &&
+    (String(preloadedBlog.slug) === id || String(preloadedBlog.id) === id);
+
+  const [blog, setBlog] = useState(() => (hasMatchingPreload ? preloadedBlog : null));
+  const [loading, setLoading] = useState(() => !hasMatchingPreload);
   const [error, setError] = useState("");
 
   useEffect(() => {
+    if (hasMatchingPreload) return undefined;
+
     let cancelled = false;
     (async () => {
       try {
@@ -49,7 +62,8 @@ export default function BlogDetail() {
     return () => {
       cancelled = true;
     };
-  }, [id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, hasMatchingPreload]);
 
   if (loading) {
     return <div className="px-4 sm:px-8 lg:px-24 py-12 text-gray-600">Loading blog...</div>;

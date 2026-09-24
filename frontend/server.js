@@ -87,9 +87,12 @@ app.use("*all", async (req, res) => {
   let appHtml = "";
   let appHead = "";
   let preloadedProduct = null;
+  let preloadedSeo = null;
+  let preloadedBlog = null;
   try {
     const render = await loadRenderer();
-    ({ html: appHtml, head: appHead, preloadedProduct } = await render(url));
+    ({ html: appHtml, head: appHead, preloadedProduct, preloadedSeo, preloadedBlog } =
+      await render(url));
   } catch (e) {
     console.error("SSR render failed, falling back to client-only render:", e.stack);
   }
@@ -104,9 +107,17 @@ app.use("*all", async (req, res) => {
   // Embed what entry-server.jsx fetched so entry-client.jsx's hydration
   // reuses it instead of re-fetching (and so hydration's first render
   // matches what was actually sent).
-  const preloadedDataScript = preloadedProduct
-    ? `<script>window.__PRELOADED_PRODUCT__=${JSON.stringify(preloadedProduct).replace(/</g, "\\u003c")}</script>`
-    : "";
+  const preloadedDataScript = [
+    preloadedProduct
+      ? `<script>window.__PRELOADED_PRODUCT__=${JSON.stringify(preloadedProduct).replace(/</g, "\\u003c")}</script>`
+      : "",
+    preloadedSeo
+      ? `<script>window.__PRELOADED_SEO__=${JSON.stringify(preloadedSeo).replace(/</g, "\\u003c")}</script>`
+      : "",
+    preloadedBlog
+      ? `<script>window.__PRELOADED_BLOG__=${JSON.stringify(preloadedBlog).replace(/</g, "\\u003c")}</script>`
+      : "",
+  ].join("");
 
   const html = template
     .replace("<!--app-head-->", headWithFallback)

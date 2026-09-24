@@ -6,6 +6,8 @@ import "./index.css";
 import { CartProvider } from "./context/CartContext.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { PreloadedProductProvider } from "./context/PreloadedProductContext.jsx";
+import { PreloadedSeoProvider } from "./context/PreloadedSeoContext.jsx";
+import { PreloadedBlogProvider } from "./context/PreloadedBlogContext.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "slick-carousel/slick/slick.css";
@@ -18,6 +20,10 @@ import { HelmetProvider } from "react-helmet-async";
 // re-fetching data it was just given.
 const preloadedProduct =
   typeof window !== "undefined" ? window.__PRELOADED_PRODUCT__ ?? null : null;
+const preloadedSeo =
+  typeof window !== "undefined" ? window.__PRELOADED_SEO__ ?? null : null;
+const preloadedBlog =
+  typeof window !== "undefined" ? window.__PRELOADED_BLOG__ ?? null : null;
 
 hydrateRoot(
   document.getElementById("root"),
@@ -27,7 +33,11 @@ hydrateRoot(
         <AuthProvider>
           <CartProvider>
             <PreloadedProductProvider value={preloadedProduct}>
-              <App />
+              <PreloadedSeoProvider value={preloadedSeo}>
+                <PreloadedBlogProvider value={preloadedBlog}>
+                  <App />
+                </PreloadedBlogProvider>
+              </PreloadedSeoProvider>
             </PreloadedProductProvider>
             <ToastContainer position="top-right" autoClose={2000} />
           </CartProvider>
