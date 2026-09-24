@@ -62,6 +62,16 @@ export default function ShopPage() {
       ? `shop-category-${slugify(categoryParam)}`
       : "shop";
 
+  /** Canonical must reflect which category/subCategory is being viewed —
+   * plain "/shop" would make every category page canonicalize to the same
+   * generic listing. Only these two params are ever meaningfully different
+   * content (brand/stock/price filters don't get their own SEO identity). */
+  const canonicalSearch = subCategoryParam
+    ? `?subCategory=${encodeURIComponent(subCategoryParam)}`
+    : categoryParam
+      ? `?category=${encodeURIComponent(categoryParam)}`
+      : "";
+
   const sidebarCategories = useMemo(() => {
     if (!Array.isArray(categories) || categories.length === 0) return [];
 
@@ -285,7 +295,7 @@ export default function ShopPage() {
   return (
 
     <>
-      <SEO page={seoPage} />
+      <SEO page={seoPage} canonicalSearch={canonicalSearch} />
 
       <div className="bg-gray-100 min-h-screen">
       {/* HEADER BANNER (only when selected category has banner) */}

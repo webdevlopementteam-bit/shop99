@@ -9,7 +9,7 @@ import { usePreloadedSeo } from "../context/PreloadedSeoContext";
 const cache = {};
 const SITE_URL = "https://www.shop99.co.in";
 
-const SEO = ({ page }) => {
+const SEO = ({ page, canonicalSearch = "" }) => {
   const location = useLocation();
 
   const preloadedSeo = usePreloadedSeo();
@@ -70,8 +70,15 @@ const SEO = ({ page }) => {
 
       {/* Always self-referencing and code-computed — never trust the admin-typed
           canonical_url field here. It's free text and has drifted wrong before
-          (missing www, a stale staging domain, even another page's URL). */}
-      <link rel="canonical" href={`${SITE_URL}${location.pathname}`} />
+          (missing www, a stale staging domain, even another page's URL).
+          `canonicalSearch` lets a page opt in to a *specific* query string
+          (e.g. Shop's ?category=) when different query values are genuinely
+          different content — plain pathname would otherwise collapse every
+          category/filter variant onto the same canonical. */}
+      <link
+        rel="canonical"
+        href={`${SITE_URL}${location.pathname}${canonicalSearch}`}
+      />
 
       {/* OG */}
       <meta property="og:title" content={seo?.og_title || ""} />
